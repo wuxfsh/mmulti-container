@@ -15,7 +15,7 @@ before_install:
   - gcloud config set compute/zone us-east1-b
   - gcloud container clusters get-credentials k8s-multi-container
   - docker login -u wuxfsh -p fad3Acne
-  - docker build -t wuxfsh/react-test -f ./client/Dockerfile.dev
+  - docker build -t wuxfsh/react-test -f ./client/Dockerfile.dev ./client
 
 script:
   - docker run wuxfsh/wuxfsh/react-test npm test -- --coverage
